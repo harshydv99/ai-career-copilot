@@ -36,7 +36,7 @@ ENV_EOF
 Start the API server:
 
 ```bash
-uvicorn app:app --reload
+uvicorn app:app --host 127.0.0.0 --port 8000
 ```
 
 The backend will be available at `http://localhost:8000` and FastAPI endpoints can be checked at `http:localhost:8000/docs`
