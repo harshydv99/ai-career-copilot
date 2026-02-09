@@ -1,9 +1,11 @@
+const API = import.meta.env.VITE_API_URL;
+
 export async function analyzeResume(file: File) {
   const formData = new FormData()
   formData.append("file", file)
 
   const response = await fetch(
-    "http://localhost:8000/analyze-resume",
+    `${API}/analyze-resume`,
     {
       method: "POST",
       body: formData
@@ -26,7 +28,7 @@ export async function askDoubt({
   language?: string;
   analysis?: any;
 }) {
-  const res = await fetch("http://localhost:8000/ask-doubt", {
+  const res = await fetch(`${API}/ask-doubt`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -46,7 +48,7 @@ export async function askDoubt({
 }
 
 export async function fetchPlacements(analysis: any) {
-  const res = await fetch("http://localhost:8000/placements", {
+  const res = await fetch(`${API}/placements`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ analysis }),
