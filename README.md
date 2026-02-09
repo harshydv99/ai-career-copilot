@@ -80,4 +80,4 @@ Frontend:
 - `npm run test` — Run tests
 
 Backend:
-- `uvicorn app:app --reload` — Start the API server
+- `uvicorn app:app --host 127.0.0.0 --port 8000` — Start the API server
