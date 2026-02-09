@@ -15,7 +15,6 @@ load_dotenv()
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key=os.getenv("OPENROUTER_API_KEY"))
-# print("API KEY:", os.getenv("OPENROUTER_API_KEY"))
 
 def call_llm(prompt):
     response = client.chat.completions.create(model="gpt-3.5-turbo",
